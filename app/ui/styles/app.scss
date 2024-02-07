@@ -1,0 +1,29 @@
+@import 'reset';
+@import 'structure';
+@import 'tags';
+@import 'variables';
+
+// master styles
+* {
+	box-sizing: border-box;
+}
+
+body {
+	// font-family: "kepler-std", serif;
+	font-family: 'fira-sans', sans-serif;
+	font-size: 16px;
+	color: var(--darkGray);
+	background-color: var(--lightGray);
+}
+
+a {
+	&:link,
+	&:visited {
+		color: var(--darkGray);
+		text-decoration: underline;
+	}
+
+	&:hover {
+		color: var(--darkGray);
+	}
+}

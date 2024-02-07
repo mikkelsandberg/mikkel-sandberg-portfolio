@@ -1,0 +1,34 @@
+'use client';
+
+import RouteChange from '@/app/lib/RouteChange';
+import NavBar from '@/app/ui/NavBar/NavBar';
+import { useWindowSize } from '@uidotdev/usehooks';
+import { useState } from 'react';
+
+type BasePageProps = {
+  children: React.ReactNode;
+};
+
+export default function BasePage({ children }: BasePageProps) {
+  const { width } = useWindowSize();
+  const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const [clearOfHeader, setClearOfHeader] = useState(false);
+
+  return width === null ? <></> : (
+    <main
+      id="App"
+      className={`${width < 768 ? 'mobileView' : ''}${mobileMenuVisible ? ' mobileMenuVisible' : ''}`}>
+      <RouteChange />
+      <NavBar
+        clearOfHeader={clearOfHeader}
+        hideMobileMenu={() => setMobileMenuVisible(false)}
+        setClearOfHeaderFalse={() => setClearOfHeader(false)}
+        setClearOfHeaderTrue={() => setClearOfHeader(true)}
+        toggleMobileMenu={() => setMobileMenuVisible(!mobileMenuVisible)}
+        scrollTarget=".splashScreen__wrapper"
+      />
+
+      {children}
+    </main>
+  );
+}

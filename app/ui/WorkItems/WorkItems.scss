@@ -1,0 +1,37 @@
+.work__wrapper {
+	margin-bottom: 20px;
+}
+
+.work__inner {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	max-width: 1360px;
+	margin: 0 auto;
+
+	>div {
+		flex: 0 0 auto;
+	}
+}
+
+.seeAll {
+	&__text {
+		font-size: 2rem;
+		line-height: normal;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__icon {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.mobileView {
+	.seeAll__wrapper {
+		height: 200px;
+	}
+}

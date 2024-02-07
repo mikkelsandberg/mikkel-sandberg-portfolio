@@ -1,0 +1,84 @@
+.workDetails {
+  &__header {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    &__label {
+      font-size: 1.15rem;
+      line-height: normal;
+
+      &:after {
+        content: '';
+        background-color: var(--darkGray);
+        display: block;
+        width: 5ex;
+        height: 1px;
+        margin: 5px auto 0;
+      }
+    }
+
+    &__title {
+      font-size: 2.25rem;
+      line-height: normal;
+    }
+  }
+
+  &__info {
+    padding: 105px 20px 20px;
+    width: auto;
+    max-width: 480px;
+
+    &__description {
+      &__text {
+        font-size: 1.2rem;
+        line-height: 1.45;
+      }
+    }
+
+    &__footer {
+      padding: 0;
+      margin-top: 30px;
+
+      &__links {
+        text-align: right;
+        margin-top: 15px;
+
+        a:link,
+        a:hover,
+        a:visited {
+          font-size: 1.2rem;
+          line-height: 1.45;
+          text-decoration: underline;
+        }
+      }
+
+      &__linkToOtherWork {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 30px;
+
+        &__link {
+          display: block;
+        }
+
+        &__icon {
+          font-size: 2rem;
+          display: block;
+
+          &--next {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobileView .workDetails {
+  &__info {
+    grid-row: 1 / 2;
+    padding: 105px 0 20px;
+    max-width: none;
+  }
+}

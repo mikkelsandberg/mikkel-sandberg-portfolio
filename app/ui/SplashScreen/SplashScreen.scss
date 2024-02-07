@@ -1,0 +1,33 @@
+.splashScreen {
+	&__wrapper {
+		background-size: contain;
+		background-color: var(--darkGray);
+		width: 100%;
+		height: calc(40vmin + 85px);
+		position: relative;
+
+		&:after {
+			content: '';
+			background: url(/splashscreen.gif);
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.1;
+		}
+	}
+
+	&__heading {
+		font-size: 8vmin;
+		line-height: 1.2;
+		color: var(--lightGray);
+		text-align: left;
+		padding-top: 85px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		white-space: nowrap;
+	}
+}

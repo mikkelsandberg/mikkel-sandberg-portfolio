@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "no-relative-import-paths",
+    "@stylistic"
+  ],
+  "rules": {
+    "no-relative-import-paths/no-relative-import-paths": [
+      "warn",
+      {
+        "allowSameFolder": false,
+        "prefix": "@"
+      }
+    ],
+    "@stylistic/indent": [
+      "error",
+      2
+    ],
+    "@stylistic/quotes": [
+      "error",
+      "single"
+    ]
+  }
 }

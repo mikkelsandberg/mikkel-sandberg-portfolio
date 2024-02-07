@@ -1,0 +1,81 @@
+.aboutMe {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 620px;
+    margin: 0 auto 20px;
+  }
+
+  &__profilePic {
+    flex: 0 1 auto;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  &__intro {
+    flex: 0 1 auto;
+
+    &__stat {
+      font-size: 1.1rem;
+      line-height: 1.15;
+      display: flex;
+      margin: 20px;
+
+      &:not(:first-of-type) {
+        margin-top: 20px;
+      }
+
+      &__icon {
+        min-width: 1em;
+      }
+
+      &__text {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1 0 100%;
+    margin-top: 40px;
+
+    &__introText {
+      font-size: 2rem;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    &__downloadResumeButton {
+
+      &:link,
+      &:visited {
+        font-size: 1.2rem;
+        line-height: normal;
+        text-align: center;
+        text-decoration: none;
+        color: var(--darkGray);
+        border: 1px solid var(--darkGray);
+        background-color: var(--lightGray);
+        display: block;
+        padding: 10px;
+        margin: 30px auto 0;
+        width: 100%;
+        max-width: 300px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      &:hover {
+        background-color: var(--medGray);
+      }
+    }
+  }
+}

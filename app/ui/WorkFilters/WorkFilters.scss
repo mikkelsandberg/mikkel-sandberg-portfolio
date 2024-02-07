@@ -1,0 +1,62 @@
+$filterColors: (
+  ("red", var(--redColor)),
+  ("yellow", var(--yellowColor)),
+  ("purple", var(--purpleColor)),
+  ("green", var(--greenColor)),
+  ("blue", var(--blueColor)),
+  ("orange", var(--orangeColor))
+);
+
+.filters__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 20px auto 10px;
+}
+
+.filter {
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid var(--darkGray);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.35s ease-in-out;
+  overflow: hidden;
+
+  &::selection {
+    background: transparent;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: center left;
+  }
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: center right;
+    transition: transform 0.35s ease-in-out;
+    z-index: -1;
+  }
+
+  @each $filter, $color in $filterColors {
+    &--#{$filter}:after {
+      background-color: #{$color};
+    }
+  }
+
+  &--active {
+    color: var(--lightGray);
+    background-color: var(--darkGray);
+  }
+}
