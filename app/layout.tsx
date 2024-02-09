@@ -4,9 +4,9 @@ import '@/app/styles/structure.scss';
 import '@/app/styles/tags.scss';
 import '@/app/styles/variables.scss';
 import BasePage from '@/app/ui/BasePage/BasePage';
+import Parser from 'html-react-parser';
 import type { Metadata } from 'next';
 import { Fira_Sans } from 'next/font/google';
-import Parser from 'html-react-parser';
 
 const firaSans = Fira_Sans({ subsets: ['latin'], weight: ['400'] });
 

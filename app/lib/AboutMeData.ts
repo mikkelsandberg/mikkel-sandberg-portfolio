@@ -1,4 +1,3 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition, faBriefcase, faMapMarkerAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 
 type AboutMeDataType = {

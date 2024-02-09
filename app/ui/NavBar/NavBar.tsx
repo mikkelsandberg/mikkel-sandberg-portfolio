@@ -3,7 +3,7 @@
 import '@/app/ui/NavBar/NavBar.scss';
 import NavLinks from '@/app/ui/NavLinks/NavLinks';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faFacebookSquare, faGithubSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useWindowSize } from '@uidotdev/usehooks';

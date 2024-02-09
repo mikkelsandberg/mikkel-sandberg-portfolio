@@ -1,7 +1,7 @@
 'use client';
 
-import RouteChange from '@/app/ui/RouteChange/RouteChange';
 import NavBar from '@/app/ui/NavBar/NavBar';
+import RouteChange from '@/app/ui/RouteChange/RouteChange';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { useState } from 'react';
 

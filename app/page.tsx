@@ -5,7 +5,7 @@ import Header from '@/app/ui/Header/Header';
 import SplashScreen from '@/app/ui/SplashScreen/SplashScreen';
 import WorkItems from '@/app/ui/WorkItems/WorkItems';
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="homePage">
       <SplashScreen />

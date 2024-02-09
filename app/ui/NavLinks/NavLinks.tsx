@@ -1,11 +1,11 @@
 'use client'
 
 import { Routes } from '@/app/lib/Routes';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Resume, { ResumeDisplayType } from '@/app/ui/Resume/Resume';
 import clsx from 'clsx';
 import Parser from 'html-react-parser';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type NavLinksProps = {
   hideMobileMenu: () => void;

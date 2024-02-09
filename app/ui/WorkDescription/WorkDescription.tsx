@@ -1,4 +1,4 @@
-import { WorkDataType, WorkLinkType } from '@/app/lib/WorkData';
+import { WorkDataType } from '@/app/lib/WorkData';
 import '@/app/ui/WorkDescription/WorkDescription.scss';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

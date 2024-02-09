@@ -5,6 +5,10 @@ import NotFound from '@/app/not-found';
 import WorkDescription from '@/app/ui/WorkDescription/WorkDescription';
 import WorkImages from '@/app/ui/WorkImages/WorkImages';
 
+export async function generateStaticParams() {
+  return WorkData.map(item => ({slug: `${formatText(item.workLabel)}-${formatText(item.workTitle)}`}));
+}
+
 export default function Page({params}: {params: {slug: string}}) {
   function findWorkItem(item: WorkDataType, matchItem: string) {
     let formattedName = `${formatText(item.workLabel)}-${formatText(item.workTitle)}`;
