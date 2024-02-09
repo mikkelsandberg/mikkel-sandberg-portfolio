@@ -13,6 +13,7 @@
 				&__links {
 					&__item {
 						&__link {
+
 							&:link,
 							&:visited {
 								color: var(--darkGray);
@@ -39,6 +40,7 @@
 
 			&__item {
 				&__link {
+
 					&:link,
 					&:visited {
 						font-size: 1.5rem;
@@ -76,7 +78,7 @@
 	position: fixed;
 	left: 0;
 	top: 0;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease;
 	z-index: 100;
 
 	&--notClear {
@@ -87,6 +89,7 @@
 			&__links {
 				&__item {
 					&__link {
+
 						&:link,
 						&:visited {
 							color: var(--lightGray);
@@ -102,6 +105,7 @@
 			&__social {
 				&__icon {
 					&__link {
+
 						&:link,
 						&:visited {
 							color: var(--lightGray);
@@ -125,6 +129,7 @@
 
 		&__item {
 			&__link {
+
 				&:link,
 				&:visited {
 					font-size: 1.25rem;
@@ -187,6 +192,7 @@
 		&__social {
 			&__icon {
 				&__link {
+
 					&:link,
 					&:visited {
 						color: var(--darkGray);

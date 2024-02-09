@@ -1,6 +1,6 @@
 'use client';
 
-import RouteChange from '@/app/lib/RouteChange';
+import RouteChange from '@/app/ui/RouteChange/RouteChange';
 import NavBar from '@/app/ui/NavBar/NavBar';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { useState } from 'react';
@@ -18,14 +18,11 @@ export default function BasePage({ children }: BasePageProps) {
     <main
       id="App"
       className={`${width < 768 ? 'mobileView' : ''}${mobileMenuVisible ? ' mobileMenuVisible' : ''}`}>
-      <RouteChange />
+      <RouteChange setClearOfHeader={setClearOfHeader} />
       <NavBar
         clearOfHeader={clearOfHeader}
         hideMobileMenu={() => setMobileMenuVisible(false)}
-        setClearOfHeaderFalse={() => setClearOfHeader(false)}
-        setClearOfHeaderTrue={() => setClearOfHeader(true)}
         toggleMobileMenu={() => setMobileMenuVisible(!mobileMenuVisible)}
-        scrollTarget=".splashScreen__wrapper"
       />
 
       {children}

@@ -1,6 +1,6 @@
 export type WorkImageType = {
   subTitle: string;
-  thumbnail: string;
+  thumbnail?: string;
   fullSize: string;
   caption: string;
 };
@@ -19,83 +19,114 @@ export type WorkDataType = {
   summary: string;
   description: string;
   images: WorkImageType[];
-  links: WorkLinkType[];
+  links?: WorkLinkType[];
 };
 
 export const WorkData: WorkDataType[] = [
   {
-    id: 'tabletop-town',
-    workLabel: 'Tabletop Town',
+    id: 'tabletoptown',
+    workLabel: 'TabletopTown',
     workTitle: 'Mobile App Development',
     tags: ['Development'],
-    skills: ['Flutter', 'Firebase', 'Google Cloud Functions'],
-    summary: 'Developing an Android and iOS app that would allow users to play tabletop games over chat.',
-    description: 'Tabletop Town is an Android and iOS application created by <a href="http://www.peterfreeby.com" target="_blank" rel="noopener noreferrer">Peter Freeby</a> and me. It is, at its core, an instant messaging application that facilitates playing tabletop games in a more asyncronous fashion. Initially, we are including support for D&D 5th Edition, but we hope to expand to other game systems and create the ability for users to make their own game systems in the app. It uses Flutter for the UI, Firebase for user authentication and database services, and Google Cloud Functions to provide data to Algolia\'s Search API to do things like search for other users in the app.',
+    skills: ['Flutter', 'AWS', 'GraphQL', 'Firebase', 'Google Cloud Functions'],
+    summary: 'Developing an Android and iOS app that allows users to play tabletop roleplaying games anytime, anywhere.',
+    description: 'TabletopTown is an Android and iOS application that <a href="http://www.peterfreeby.com" target="_blank" rel="noopener noreferrer">Peter Freeby</a> and I began working on in 2020, eventually bringing on other folks to help build it, and we launched the app in 2023. At its core, it is an instant messaging app that allows users to play tabletop roleplaying games asynchronously. The app includes a set of creator tools that empower users to modify game systems and other content in their library, mod games on the fly while playing, and even publish original content to the marketplace. It uses Flutter for the UI, AWS for the database, Hasura to generate a GraphQL API to interface with the database, and Firebase for user authentication.',
     images: [
       {
-        subTitle: 'Login screen',
-        thumbnail: '/tabletop-town/ttt-login-screen-thumbnail.jpg',
-        fullSize: '/tabletop-town/ttt-login-screen-full-size.jpg',
-        caption: 'The screen that provides the user with a way to sign up or log in.',
+        subTitle: 'Game Chat',
+        fullSize: '/tabletoptown/t3-chat-screen.jpg',
+        caption: 'The core of the experience revolves around the chat screen, where users can interact with each other, speak in character or out of character, access their character sheet and notes, roll dice, and more.',
       },
       {
-        subTitle: 'Chat screen',
-        thumbnail: '/tabletop-town/ttt-chat-screen-thumbnail.jpg',
-        fullSize: '/tabletop-town/ttt-chat-screen-full-size.jpg',
-        caption: 'Users can view the conversation and interact with other players here.',
+        subTitle: 'Dice Roller',
+        fullSize: '/tabletoptown/t3-dice-roller.jpg',
+        caption: 'The dice roller is a key feature of the app, allowing users to roll dice and see the results in the chat.',
       },
       {
-        subTitle: 'Die roll creation screen',
-        thumbnail: '/tabletop-town/ttt-roll-selection-screen-thumbnail.jpg',
-        fullSize: '/tabletop-town/ttt-roll-selection-screen-full-size.jpg',
-        caption: 'Users can view the conversation and interact with other players here.',
-      },
-    ],
-    links: [
-      {
-        title: 'App info',
-        url: 'https://github.com/mikkelsandberg/tabletoptown-info',
-      },
-    ],
-  },
-  {
-    id: 'corelogic-site-migration',
-    workLabel: 'CoreLogic',
-    workTitle: 'Site migration',
-    tags: ['Development'],
-    skills: ['Bootstrap', 'HTML', 'CSS'],
-    summary: 'Moving Corelogic&rsquo;s site content into a new version of their CMS.',
-    description: 'CoreLogic went through a full site rebrand and was migrating their site into a new version of their CMS. My job was to take the content from the old site and put it into templates in the new system. I also added custom styling as needed using the Bootstrap library, and I helped develop UI standards for the main contact banner that displays on many pages across the site.',
-    images: [
-      {
-        subTitle: 'Rebranded page',
-        thumbnail: '/core-logic/multi-closing-new-thumbnail.jpg',
-        fullSize: '/core-logic/multi-closing-new-full-size.jpg',
-        caption: 'The final page after migrating the content into the new CMS and new template.',
+        subTitle: 'Creator Tools',
+        fullSize: '/tabletoptown/t3-creator-tools.jpg',
+        caption: 'The creator tools are what give users the ability to modify the game and any content they own.',
       },
       {
-        subTitle: 'Previous overview tab',
-        thumbnail: '/core-logic/multi-closing-tab1-thumbnail.jpg',
-        fullSize: '/core-logic/multi-closing-tab1-full-size.jpg',
-        caption: 'The old page used a tabbed navigation to separate the content.',
-      },
-      {
-        subTitle: 'Previous product details tab',
-        thumbnail: '/core-logic/multi-closing-tab2-thumbnail.jpg',
-        fullSize: '/core-logic/multi-closing-tab2-full-size.jpg',
-        caption: 'The old page used a tabbed navigation to separate the content.',
-      },
-      {
-        subTitle: 'Previous contact tab',
-        thumbnail: '/core-logic/multi-closing-tab3-thumbnail.jpg',
-        fullSize: '/core-logic/multi-closing-tab3-full-size.jpg',
-        caption: 'The old page used a tabbed navigation to separate the content.',
+        subTitle: 'Marketplace',
+        fullSize: '/tabletoptown/t3-marketplace.jpg',
+        caption: 'The marketplace empowers creators to share their work with the world, and other users can buy their content to use in their own games.',
       },
     ],
     links: [
       {
         title: 'Live site',
-        url: 'https://www.corelogic.com',
+        url: 'https://www.tabletop.town/',
+      },
+    ],
+  },
+  {
+    id: 'udemy-web-dev-course',
+    workLabel: 'Udemy Web Dev Course',
+    workTitle: 'Face detect app',
+    tags: ['Development'],
+    skills: [
+      'React',
+      'JavaScript',
+      'AJAX',
+      'Clarifai API',
+      'CSS',
+      'Express.js',
+      'PostgreSQL',
+    ],
+    summary: 'Building an app that lets users see if a provided picture has a detectable face in it.',
+    description: 'This was the final project for the Complete Web Developer in 2018 course on Udemy. I started by creating a static front end in React and added most of the styling with the Tachyons library and some custom CSS. Then, I built out the backend API using Express.js and tested the endpoints with Postman. After that, I structured the database using PostgreSQL and used knex.js to do SQL queries. Finally, I deployed the application to Heroku.',
+    images: [
+      {
+        subTitle: 'Login view',
+        thumbnail: '/face-detect/face-detect-login-thumbnail.jpg',
+        fullSize: '/face-detect/face-detect-login-full-size.jpg',
+        caption: 'The logged out view for the face detect app.',
+      },
+      {
+        subTitle: 'Home view',
+        thumbnail: '/face-detect/face-detect-home-thumbnail.jpg',
+        fullSize: '/face-detect/face-detect-home-full-size.jpg',
+        caption: 'The home page for the face detect app.',
+      },
+    ],
+    links: [
+      {
+        title: 'Front end repository',
+        url: 'https://github.com/mikkelsandberg/face-detect-front-end',
+      },
+      {
+        title: 'Back end repository',
+        url: 'https://github.com/mikkelsandberg/face-detect-api',
+      },
+    ],
+  },
+  {
+    id: 'codecademy-intensive-jammming',
+    workLabel: 'Codecademy Intensive',
+    workTitle: 'Jammming',
+    tags: ['Design', 'Development'],
+    skills: ['React', 'JavaScript', 'AJAX', 'Spotify API', 'CSS'],
+    summary: 'Creating an app that allows users to build custom playlists with content from Spotify.',
+    description: 'This was the final project for the Build Front End Web Applications from Scratch course on Codecademy. I bootstrapped the application using Create React App and built components using ES6 class structure. Then, I integrated with the Spotify API to allow users to login to their account, search for content on Spotify, build a playlist, and save the playlist to their profile.',
+    images: [
+      {
+        subTitle: 'Search results view',
+        thumbnail: '/jammming/jammming-search-results-thumbnail.jpg',
+        fullSize: '/jammming/jammming-search-results-full-size.jpg',
+        caption: 'The search results view for the Jammming app.',
+      },
+      {
+        subTitle: 'Playlist view',
+        thumbnail: '/jammming/jammming-playlist-thumbnail.jpg',
+        fullSize: '/jammming/jammming-playlist-full-size.jpg',
+        caption: 'The playlist view for the Jammming app.',
+      },
+    ],
+    links: [
+      {
+        title: 'Live site',
+        url: 'http://msandberg-jammming.surge.sh',
       },
     ],
   },
@@ -142,113 +173,6 @@ export const WorkData: WorkDataType[] = [
         thumbnail: '/ee/ee-live-help-request-thumbnail.jpg',
         fullSize: '/ee/ee-live-help-request-full-size.jpg',
         caption: 'The improved interface for finding consultants.',
-      },
-    ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.experts-exchange.com/live',
-      },
-    ],
-  },
-  {
-    id: 'experts-exchange-live-landing-page',
-    workLabel: 'Experts Exchange',
-    workTitle: 'Live landing page',
-    tags: ['Development'],
-    skills: ['HTML', 'CSS'],
-    summary: 'Creating a marketing-oriented landing page for logged out users to see the value of Experts Exchange&rsquo;s Live product.',
-    description: 'This is the Live product&rsquo;s logged out view. The purpose of this page was to show the viewer why Live is valuable, how it works, and what users like about it &mdash; all in a well-designed and easy to use interface. I took the mockup provided by our UI team and created all the HTML and CSS needed to bring the page to life.',
-    images: [
-      {
-        subTitle: 'Informational landing page',
-        thumbnail: '/ee/ee-live-logged-out-thumbnail.jpg',
-        fullSize: '/ee/ee-live-logged-out-full-size.jpg',
-        caption: 'The logged out marketing page for the Live product.',
-      },
-    ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.experts-exchange.com/live',
-      },
-    ],
-  },
-  {
-    id: 'udemy-web-dev-course',
-    workLabel: 'Udemy Web Dev Course',
-    workTitle: 'Face detect app',
-    tags: ['Development'],
-    skills: [
-      'React',
-      'JavaScript',
-      'AJAX',
-      'Clarifai API',
-      'CSS',
-      'Express.js',
-      'PostgreSQL',
-    ],
-    summary: 'Building an app that lets users see if a provided picture has a detectable face in it.',
-    description: 'This was the final project for the Complete Web Developer in 2018 course on Udemy. I started by creating a static front end in React and added most of the styling with the Tachyons library and some custom CSS. Then, I built out the backend API using Express.js and tested the endpoints with Postman. After that, I structured the database using PostgreSQL and used knex.js to do SQL queries. Finally, I deployed the application to Heroku.',
-    images: [
-      {
-        subTitle: 'Login view',
-        thumbnail: '/face-detect/face-detect-login-thumbnail.jpg',
-        fullSize: '/face-detect/face-detect-login-full-size.jpg',
-        caption: 'The logged out view for the face detect app.',
-      },
-      {
-        subTitle: 'Home view',
-        thumbnail: '/face-detect/face-detect-home-thumbnail.jpg',
-        fullSize: '/face-detect/face-detect-home-full-size.jpg',
-        caption: 'The home page for the face detect app.',
-      },
-    ],
-    links: [
-      {
-        title: 'Front end repository',
-        url: 'https://github.com/mikkelsandberg/face-detect-front-end',
-      },
-      {
-        title: 'Back end repository',
-        url: 'https://github.com/mikkelsandberg/face-detect-api',
-      },
-      {
-        title: 'Live site',
-        url: 'https://face-detect-mikkel.herokuapp.com',
-      },
-    ],
-  },
-  {
-    id: 'codecademy-intensive-jammming',
-    workLabel: 'Codecademy Intensive',
-    workTitle: 'Jammming',
-    tags: ['Design', 'Development'],
-    skills: ['React', 'JavaScript', 'AJAX', 'Spotify API', 'CSS'],
-    summary: 'Creating an app that allows users to build custom playlists with content from Spotify.',
-    description: 'This was the final project for the Build Front End Web Applications from Scratch course on Codecademy. I bootstrapped the application using Create React App and built components using ES6 class structure. Then, I integrated with the Spotify API to allow users to login to their account, search for content on Spotify, build a playlist, and save the playlist to their profile.',
-    images: [
-      {
-        subTitle: 'Search results view',
-        thumbnail: '/jammming/jammming-search-results-thumbnail.jpg',
-        fullSize: '/jammming/jammming-search-results-full-size.jpg',
-        caption: 'The search results view for the Jammming app.',
-      },
-      {
-        subTitle: 'Playlist view',
-        thumbnail: '/jammming/jammming-playlist-thumbnail.jpg',
-        fullSize: '/jammming/jammming-playlist-full-size.jpg',
-        caption: 'The playlist view for the Jammming app.',
-      },
-    ],
-    links: [
-      {
-        title: 'Repository',
-        url: 'https://github.com/mikkelsandberg/codecademy-intensive-jammming',
-      },
-      {
-        title: 'Live site',
-        url: 'http://msandberg-jammming.surge.sh',
       },
     ],
   },
@@ -313,10 +237,6 @@ export const WorkData: WorkDataType[] = [
     ],
     links: [
       {
-        title: 'Repository',
-        url: 'https://github.com/mikkelsandberg/apc-entertainment-dev',
-      },
-      {
         title: 'Live site',
         url: 'http://apcentertainment.net',
       },
@@ -326,7 +246,7 @@ export const WorkData: WorkDataType[] = [
     id: 'friend-quest-podcast-production',
     workLabel: 'Friend Quest',
     workTitle: 'Podcast production',
-    tags: ['Podcast production', 'Video production'],
+    tags: ['Podcast production'],
     skills: ['Audition', 'Premiere'],
     summary: 'Producing a podcast where my friends and I collaborate to tell interesting stories with great characters.',
     description: 'Friend Quest is a podcast that I do with my friends where we play tabletop role playing games. We each record our audio separately and then I edit all of the tracks in Audition to get the final cut. Then, I add the intro and outro music, record voiceovers for the intro and outro, and add some basic EQ and noise filtering. Finally, I export the final audio and bring it into Premiere to create a video version of the episode as well. The cover artwork was done by <a href="http://www.peterfreeby.com" target="_blank" rel="noopener noreferrer">Peter Freeby</a>.',
@@ -346,52 +266,6 @@ export const WorkData: WorkDataType[] = [
       {
         title: 'Friend Quest Twitter',
         url: 'https://twitter.com/friendquestpod',
-      },
-    ],
-  },
-  {
-    id: 'class-project-a-rude-awakening',
-    workLabel: 'Short film',
-    workTitle: 'A Rude Awakening',
-    tags: ['Animation', 'Video production'],
-    skills: ['Maya', 'Premiere'],
-    summary: 'Modeling and animating a short film about a creature waking up for the first time.',
-    description: 'This was the final project for an animation course that I took. I used Maya to model the characters and scene, rig them, animate them, light the scene, and render the final frames. Then, I took the frames into Premiere to assemble the video, add music and sound effects, add title screens, and export the final video. You can see some of the other 3D work I&rsquo;ve done in my <a href="https://vimeo.com/95346384" target="_blank" rel="noopener noreferrer">demo reel</a>.',
-    images: [
-      {
-        subTitle: 'A challenger appears',
-        thumbnail: '/class-projects/a-rude-awakening-thumbnail.jpg',
-        fullSize: '/class-projects/a-rude-awakening-full-size.jpg',
-        caption: 'A frame grab from the final render.',
-      },
-    ],
-    links: [
-      {
-        title: 'Vimeo link',
-        url: 'https://vimeo.com/113687379',
-      },
-    ],
-  },
-  {
-    id: 'class-project-memories-of-mississippi',
-    workLabel: 'Short film',
-    workTitle: 'Memories of Mississippi',
-    tags: ['Video production'],
-    skills: ['Final Cut', 'Lighting', 'Audio engineering', 'Sound Editing'],
-    summary: 'Producing a video of an interview I did of my dad recounting his memories of a summer in Mississippi.',
-    description: 'This was a project for a video production course that I took. The assignment was to interview someone and produce a video for it; including shooting the video, lighting, sound recording, and editing it all together. I used Final Cut to edit the final version.',
-    images: [
-      {
-        subTitle: 'Interviewing my dad',
-        thumbnail: '/class-projects/memories-of-mississippi-thumbnail.jpg',
-        fullSize: '/class-projects/memories-of-mississippi-full-size.jpg',
-        caption: 'A frame grab from the final video.',
-      },
-    ],
-    links: [
-      {
-        title: 'Vimeo link',
-        url: 'https://vimeo.com/128216025',
       },
     ],
   },

@@ -4,9 +4,7 @@ export default function SplashScreen() {
   return (
     <section className="splashScreen__wrapper">
       <h1 className="splashScreen__heading">
-        App Development &<br />
-        Podcasting &<br />
-        Coffee
+        Hello! I&rsquo;m Mikkel,<br/>a full stack developer<br/>based in California.
       </h1>
     </section>
   );

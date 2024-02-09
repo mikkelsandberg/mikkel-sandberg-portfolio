@@ -24,15 +24,5 @@ export const Filters: FilterType[] = [
     id: 3,
     name: 'Podcast production',
     color: 'green'
-  },
-  {
-    id: 4,
-    name: 'Video production',
-    color: 'blue'
-  },
-  {
-    id: 5,
-    name: 'Animation',
-    color: 'orange'
   }
 ];

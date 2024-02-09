@@ -1,22 +1,21 @@
-import { WorkLinkType } from '@/app/lib/WorkData';
+import { WorkDataType, WorkLinkType } from '@/app/lib/WorkData';
 import '@/app/ui/WorkDescription/WorkDescription.scss';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Parser from 'html-react-parser';
 import Link from 'next/link';
 
 type WorkDescriptionProps = {
-  workTitle: string;
-  workLabel: string;
-  description: string;
-  skills: string[];
-  links: WorkLinkType[];
+  workData: WorkDataType;
   currentNum: number;
   numItems: number;
   linkToPrev: string;
   linkToNext: string;
 };
 
-export default function WorkDescription({ workTitle, workLabel, description, skills, links, currentNum, numItems, linkToPrev, linkToNext }: WorkDescriptionProps) {
+export default function WorkDescription({ workData, currentNum, numItems, linkToPrev, linkToNext }: WorkDescriptionProps) {
+  const { workTitle, workLabel, description, skills, links } = workData;
+
   return (
     <section className="workDetails__info">
       <header className="workDetails__header">
@@ -38,27 +37,29 @@ export default function WorkDescription({ workTitle, workLabel, description, ski
             );
           })}
         </ul>
-        <section className="workDetails__info__footer__links">
-          {links.map((link, key = 0) => {
-            return (
-              <p key={key++}>
-                <a
-                  href={Parser(link.url) as string}
-                  className="workDetails__info__footer__links__link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {Parser(link.title)}
-                </a>
-              </p>
-            );
-          })}
-        </section>
+        {links !== undefined && links.length > 0 && (
+          <section className="workDetails__info__footer__links">
+            {links.map((link, key = 0) => {
+              return (
+                <p key={key++}>
+                  <a
+                    href={Parser(link.url) as string}
+                    className="workDetails__info__footer__links__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {Parser(link.title)}
+                  </a>
+                </p>
+              );
+            })}
+          </section>
+        )}
         <section className="workDetails__info__footer__linkToOtherWork">
           <p>
             <Link href={`/my-work/${linkToPrev}`} className="workDetails__info__footer__linkToOtherWork__link">
               <FontAwesomeIcon
-                icon="arrow-left"
+                icon={faArrowLeft}
                 className="workDetails__info__footer__linkToOtherWork__icon workDetails__info__footer__linkToOtherWork__icon--previous"
               />Previous
             </Link>
@@ -69,7 +70,7 @@ export default function WorkDescription({ workTitle, workLabel, description, ski
           <p>
             <Link href={`/my-work/${linkToNext}`} className="workDetails__info__footer__linkToOtherWork__link">
               <FontAwesomeIcon
-                icon="arrow-right"
+                icon={faArrowRight}
                 className="workDetails__info__footer__linkToOtherWork__icon workDetails__info__footer__linkToOtherWork__icon--next"
               />Next
             </Link>

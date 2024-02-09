@@ -1,12 +1,15 @@
+'use client';
+
 import '@/app/ui/NavBar/NavBar.scss';
 import NavLinks from '@/app/ui/NavLinks/NavLinks';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faGithubSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useWindowSize } from '@uidotdev/usehooks';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 
 type SocialLinkType = {
   link: string;
@@ -21,61 +24,22 @@ const socialLinks: SocialLinkType[] = [
   {
     link: 'https://www.linkedin.com/in/mikkelsandberg/',
     icon: faLinkedin,
-  },
-  {
-    link: 'https://twitter.com/sikkelmandberg',
-    icon: faTwitterSquare,
-  },
-  {
-    link: 'https://www.facebook.com/mikkelhsandberg',
-    icon: faFacebookSquare,
   }
 ];
 
 type NavBarProps = {
   clearOfHeader: boolean;
   hideMobileMenu: () => void;
-  scrollTarget: string;
-  setClearOfHeaderTrue: () => void;
-  setClearOfHeaderFalse: () => void;
   toggleMobileMenu: () => void;
 }
 
 export default function NavBar({
   clearOfHeader,
   hideMobileMenu,
-  scrollTarget,
-  setClearOfHeaderTrue,
-  setClearOfHeaderFalse,
   toggleMobileMenu,
 }: NavBarProps) {
   const pathName = usePathname();
   const { width } = useWindowSize();
-
-  const checkScrollTop = useCallback(() => {
-    const scrollTargetElem = document.querySelector(scrollTarget);
-    const navBarElem = document.querySelector('.mainNav');
-
-    if (scrollTargetElem !== null && navBarElem !== null) {
-      if (window.scrollY >= scrollTargetElem.scrollHeight - navBarElem.scrollHeight) {
-        setClearOfHeaderTrue();
-      } else {
-        setClearOfHeaderFalse();
-      }
-    }
-  }, [scrollTarget, setClearOfHeaderFalse, setClearOfHeaderTrue]);
-
-  useEffect(() => {
-    if (scrollTarget !== undefined) {
-      checkScrollTop();
-
-      window.addEventListener('scroll', () => checkScrollTop());
-
-      return () => {
-        window.removeEventListener('scroll', () => checkScrollTop());
-      };
-    }
-  }, [checkScrollTop, scrollTarget]);
 
   const navItems = useMemo(() => {
     const renderItems: React.ReactNode[] = [];
@@ -105,7 +69,7 @@ export default function NavBar({
         <div key={key++}>
           <FontAwesomeIcon
             key={key++}
-            icon="bars"
+            icon={faBars}
             size="2x"
             className="mainNav__mobileMenu__Icon"
             onClick={toggleMobileMenu}

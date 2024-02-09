@@ -5,7 +5,7 @@ type AboutMeDataType = {
   profilePic: string;
   stats: { stat: string; icon: IconDefinition }[];
   introText: string;
-  bodyContent: string[];
+  bodyContent: string;
 };
 
 const AboutMeData: AboutMeDataType = {
@@ -16,22 +16,16 @@ const AboutMeData: AboutMeDataType = {
       icon: faUser
     },
     {
-      stat: 'Web Developer,<br>Designer, and<br>Podcast Producer',
+      stat: 'Full Stack Developer',
       icon: faBriefcase
     },
     {
       stat: 'California, US',
       icon: faMapMarkerAlt
-    },
-    {
-      stat: '<a href="https://github.com/mikkelsandberg" target="_blank" rel="noopener noreferrer">Github profile</a>',
-      icon: faGithub
     }
   ],
-  introText: 'Hi there! My name is Mikkel and I am a web and mobile application developer, as well as a podcast producer, based in California.',
-  bodyContent: [
-    'Most of my <a href="/my-work">professional work</a> has been as a front&ndash;end web developer, but I have a curiosity and hunger to learn. From supporting a community of professionals by <a href="/my-work/experts-exchange-live-product-redesign">improving user experience</a> and building <a href="/my-work/apc-entertainment-website-design-and-development">websites for small businesses</a>, to <a href="/my-work/friend-quest-podcast-production">making podcasts</a> to tell a good story and making mobile apps to enable people to <a href="/my-work/tabletop-town-mobile-app-development">play tabletop games over chat</a> and tell their own stories, my guiding principle is to make sure that my work makes a positive impact on the world.'
-  ]
+  introText: 'I am a detail-oriented full stack developer with a strong design sense, skilled at creating beautiful and clean applications.',
+  bodyContent: 'I excel at collaborating across teams to deliver robust user experiences, leveraging modern and secure infrastructure to increase developer productivity and drive user growth. I am well-versed in a range of technologies, including React, Flutter, MongoDB, PostgreSQL, GraphQL, Firebase, Google Cloud, and AWS. With these tools, I have worked on a variety of products and services: a mobile app that allows users to play tabletop role playing games whenever and wherever they are, a leadership coaching platform that gives users access to highly skilled coaching to uplevel their leadership skills, and a hotel franchise&rsquo;s main search and booking experience.<br/>You can find more of my work on <a href="/my-work">My Work</a> page.',
 };
 
 export default AboutMeData;

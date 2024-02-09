@@ -11,8 +11,7 @@ export default function WorkItem({ item }: { item: WorkDataType }) {
     <Link href={`/my-work/${formatText(workLabel)}-${formatText(workTitle)}`} className="workItem">
       <div
         className="workItem__image"
-        style={{ backgroundImage: `url(${images[0].thumbnail})` }}
-      // alt={`${FormatText(workLabel)}-${FormatText(workTitle)}`}
+        style={{ backgroundImage: `url(${images[0].thumbnail || images[0].fullSize})` }}
       />
       <div className="workItem__details">
         <p className="workItem__label">{Parser(workLabel)}</p>

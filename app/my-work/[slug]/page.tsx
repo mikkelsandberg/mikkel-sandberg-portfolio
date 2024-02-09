@@ -1,8 +1,7 @@
 import { formatText } from '@/app/lib/HelperFunctions';
 import { WorkData, WorkDataType } from '@/app/lib/WorkData';
 import '@/app/my-work/[slug]/WorkDetails.scss';
-import Header from '@/app/ui/Header/Header';
-import NotFound from '@/app/ui/NotFound/NotFound';
+import NotFound from '@/app/not-found';
 import WorkDescription from '@/app/ui/WorkDescription/WorkDescription';
 import WorkImages from '@/app/ui/WorkImages/WorkImages';
 
@@ -36,13 +35,10 @@ export default function Page({params}: {params: {slug: string}}) {
   function showWork() {
     if (filteredWork().current === -1) {
       return (
-        <section className="contentWrapper">
-          <Header text="Not Found" />
-          <NotFound />
-        </section>
+        <NotFound />
       );
     } else {
-      const { workLabel, workTitle, images, description, skills, links } = WorkData[filteredWork().current];
+      const workData = WorkData[filteredWork().current];
 
       const prevFormatted = `${formatText(WorkData[filteredWork().prev].workLabel)}-${formatText(
         WorkData[filteredWork().prev].workTitle
@@ -54,13 +50,9 @@ export default function Page({params}: {params: {slug: string}}) {
 
       return (
         <section className="workDetails">
-          <WorkImages images={images} workLabel={workLabel} workTitle={workTitle} />
+          <WorkImages workData={workData} />
           <WorkDescription
-            workTitle={workTitle}
-            workLabel={workLabel}
-            description={description}
-            skills={skills}
-            links={links}
+            workData={workData}
             currentNum={filteredWork().current + 1}
             numItems={WorkData.length}
             linkToPrev={prevFormatted}
