@@ -3,7 +3,7 @@
 		background-size: contain;
 		background-color: var(--darkGray);
 		width: 100%;
-		height: calc(50vh);
+		height: calc(40vmin + 85px);
 		position: relative;
 
 		&:after {
@@ -23,7 +23,7 @@
 		line-height: 1.2;
 		color: var(--lightGray);
 		text-align: left;
-		padding-top: 0;
+		padding-top: 85px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
