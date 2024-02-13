@@ -18,13 +18,13 @@ type SocialLinkType = {
 
 const socialLinks: SocialLinkType[] = [
   {
+    link: 'https://www.linkedin.com/in/mikkelsandberg/',
+    icon: faLinkedin,
+  },
+  {
     link: 'https://github.com/mikkelsandberg',
     icon: faGithubSquare,
   },
-  {
-    link: 'https://www.linkedin.com/in/mikkelsandberg/',
-    icon: faLinkedin,
-  }
 ];
 
 type NavBarProps = {
