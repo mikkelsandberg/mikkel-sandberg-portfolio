@@ -35,12 +35,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The marketplace empowers creators to share their work with the world, and other users can buy their content to use in their own games.',
       },
     ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.tabletop.town/',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://www.tabletop.town/',
+    //   },
+    // ],
   },
   {
     id: 'corelogic-site-migration',
@@ -76,12 +76,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The old page used a tabbed navigation to separate the content.',
       },
     ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.corelogic.com',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://www.corelogic.com',
+    //   },
+    // ],
   },
   {
     id: 'experts-exchange-profile-page-redesign',
@@ -99,12 +99,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The new profile page that my team and I designed and built.',
       },
     ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.experts-exchange.com/members/MikkelSandberg.html',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://www.experts-exchange.com/members/MikkelSandberg.html',
+    //   },
+    // ],
   },
   {
     id: 'experts-exchange-live-product-redesign',
@@ -128,12 +128,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The improved interface for finding consultants.',
       },
     ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.experts-exchange.com/live',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://www.experts-exchange.com/live',
+    //   },
+    // ],
   },
   {
     id: 'experts-exchange-live-landing-page',
@@ -151,12 +151,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The logged out marketing page for the Live product.',
       },
     ],
-    links: [
-      {
-        title: 'Live site',
-        url: 'https://www.experts-exchange.com/live',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://www.experts-exchange.com/live',
+    //   },
+    // ],
   },
   {
     id: 'udemy-web-dev-course',
@@ -188,20 +188,20 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The home page for the face detect app.',
       },
     ],
-    links: [
-      {
-        title: 'Front end repository',
-        url: 'https://github.com/mikkelsandberg/face-detect-front-end',
-      },
-      {
-        title: 'Back end repository',
-        url: 'https://github.com/mikkelsandberg/face-detect-api',
-      },
-      {
-        title: 'Live site',
-        url: 'https://face-detect-mikkel.herokuapp.com',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Front end repository',
+    //     url: 'https://github.com/mikkelsandberg/face-detect-front-end',
+    //   },
+    //   {
+    //     title: 'Back end repository',
+    //     url: 'https://github.com/mikkelsandberg/face-detect-api',
+    //   },
+    //   {
+    //     title: 'Live site',
+    //     url: 'https://face-detect-mikkel.herokuapp.com',
+    //   },
+    // ],
   },
   {
     id: 'codecademy-intensive-jammming',
@@ -225,16 +225,16 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The playlist view for the Jammming app.',
       },
     ],
-    links: [
-      {
-        title: 'Repository',
-        url: 'https://github.com/mikkelsandberg/codecademy-intensive-jammming',
-      },
-      {
-        title: 'Live site',
-        url: 'http://msandberg-jammming.surge.sh',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Repository',
+    //     url: 'https://github.com/mikkelsandberg/codecademy-intensive-jammming',
+    //   },
+    //   {
+    //     title: 'Live site',
+    //     url: 'http://msandberg-jammming.surge.sh',
+    //   },
+    // ],
   },
   {
     id: 'apc-entertainment-website-design-and-development',
@@ -295,16 +295,16 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The contact section for APC Entertainment.',
       },
     ],
-    links: [
-      {
-        title: 'Repository',
-        url: 'https://github.com/mikkelsandberg/apc-entertainment-dev',
-      },
-      {
-        title: 'Live site',
-        url: 'http://apcentertainment.net',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Repository',
+    //     url: 'https://github.com/mikkelsandberg/apc-entertainment-dev',
+    //   },
+    //   {
+    //     title: 'Live site',
+    //     url: 'http://apcentertainment.net',
+    //   },
+    // ],
   },
   {
     id: 'friend-quest-podcast-production',
@@ -322,16 +322,16 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'The cover artwork for Friend Quest.',
       },
     ],
-    links: [
-      {
-        title: 'Podcast website',
-        url: 'https://anchor.fm/friend-quest',
-      },
-      {
-        title: 'Friend Quest Twitter',
-        url: 'https://twitter.com/friendquestpod',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Podcast website',
+    //     url: 'https://anchor.fm/friend-quest',
+    //   },
+    //   {
+    //     title: 'Friend Quest Twitter',
+    //     url: 'https://twitter.com/friendquestpod',
+    //   },
+    // ],
   },
   {
     id: 'class-project-a-rude-awakening',
@@ -349,12 +349,12 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'A frame grab from the final render.',
       },
     ],
-    links: [
-      {
-        title: 'Vimeo link',
-        url: 'https://vimeo.com/113687379',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Vimeo link',
+    //     url: 'https://vimeo.com/113687379',
+    //   },
+    // ],
   },
   {
     id: 'class-project-memories-of-mississippi',
@@ -372,11 +372,11 @@ const WorkDataLegacy: WorkDataType[] = [
         caption: 'A frame grab from the final video.',
       },
     ],
-    links: [
-      {
-        title: 'Vimeo link',
-        url: 'https://vimeo.com/128216025',
-      },
-    ],
+    // links: [
+    //   {
+    //     title: 'Vimeo link',
+    //     url: 'https://vimeo.com/128216025',
+    //   },
+    // ],
   },
 ];
