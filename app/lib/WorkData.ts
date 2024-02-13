@@ -5,11 +5,6 @@ export type WorkImageType = {
   caption: string;
 };
 
-export type WorkLinkType = {
-  title: string;
-  url: string;
-};
-
 export type WorkDataType = {
   id: string;
   workLabel: string;
@@ -19,7 +14,6 @@ export type WorkDataType = {
   summary: string;
   description: string;
   images: WorkImageType[];
-  links?: WorkLinkType[];
 };
 
 export const WorkData: WorkDataType[] = [
