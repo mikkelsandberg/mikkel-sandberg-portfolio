@@ -14,7 +14,7 @@ type WorkDescriptionProps = {
 };
 
 export default function WorkDescription({ workData, currentNum, numItems, linkToPrev, linkToNext }: WorkDescriptionProps) {
-  const { workTitle, workLabel, description, skills, links } = workData;
+  const { workTitle, workLabel, description, skills } = workData;
 
   return (
     <section className="workDetails__info">
@@ -37,24 +37,6 @@ export default function WorkDescription({ workData, currentNum, numItems, linkTo
             );
           })}
         </ul>
-        {links !== undefined && links.length > 0 && (
-          <section className="workDetails__info__footer__links">
-            {links.map((link, key = 0) => {
-              return (
-                <p key={key++}>
-                  <a
-                    href={Parser(link.url) as string}
-                    className="workDetails__info__footer__links__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {Parser(link.title)}
-                  </a>
-                </p>
-              );
-            })}
-          </section>
-        )}
         <section className="workDetails__info__footer__linkToOtherWork">
           <p>
             <Link href={`/my-work/${linkToPrev}`} className="workDetails__info__footer__linkToOtherWork__link">
