@@ -12,7 +12,7 @@ import { Fira_Sans } from 'next/font/google';
 const firaSans = Fira_Sans({ subsets: ['latin'], weight: ['400'] });
 
 export const metadata: Metadata = {
-  title: 'Mikkel Sandberg | Full Stack Developer',
+  title: 'Mikkel Sandberg | Software Engineer',
   description: Parser('This is Mikkel Sandberg&rsquo;s website. He is a software engineer, and this site features some of his recent work.') as string,
   alternates: {
     canonical: 'https://mikkelsandberg.com',
