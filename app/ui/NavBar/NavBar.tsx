@@ -56,7 +56,7 @@ export default function NavBar({
 
     function isNotFoundPage() {
       const onNotFoundPage = Boolean(
-        pathName !== '/' && pathName !== '/my-work' && pathName !== '/about-me'
+        pathName !== '/' && pathName !== '/my-work' && pathName !== '/about-me' && pathName !== '/test'
       );
 
       if (onNotFoundPage) {

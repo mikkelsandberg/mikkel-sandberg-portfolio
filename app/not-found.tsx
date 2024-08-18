@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <section className="contentWrapper">
       <Header text="Not Found" />
-     
+
       <section className="notFound__wrapper">
         <h2 className="notFound__subheading">Well this is embarrassing&hellip;</h2>
         <p className="notFound__bodyText">The page you&rsquo;re looking for doesn&rsquo;t exist.</p>
