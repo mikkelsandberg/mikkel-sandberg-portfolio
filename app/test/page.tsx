@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="contentWrapper">
+      {/* A test page */}
       <Header text="Test" />
     </section>
   );
