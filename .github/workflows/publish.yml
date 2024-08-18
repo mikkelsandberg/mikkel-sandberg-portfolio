@@ -30,10 +30,11 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npx next build
-        env:
-          NEXT_PUBLIC_M: ${{ secrets.NEXT_PUBLIC_M }}
-          NEXT_PUBLIC_K: ${{ secrets.NEXT_PUBLIC_K }}
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_M=${{ secrets.NEXT_PUBLIC_M }} >> .env
+          echo NEXT_PUBLIC_K=${{ secrets.NEXT_PUBLIC_K }} >> .env
+          npx next build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
