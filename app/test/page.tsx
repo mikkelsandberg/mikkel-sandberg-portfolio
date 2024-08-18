@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   other: {
-    m: process.env.M || 'hard_coded1',
-    k: process.env.K || 'hard_coded2',
+    m: process.env.NEXT_PUBLIC_M || 'hard_coded1',
+    k: process.env.NEXT_PUBLIC_K || 'hard_coded2',
   },
 };
 
