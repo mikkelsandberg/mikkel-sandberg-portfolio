@@ -1,23 +1,31 @@
-import { formatText } from '@/app/lib/HelperFunctions';
-import { WorkData, WorkDataType } from '@/app/lib/WorkData';
-import '@/app/my-work/[slug]/WorkDetails.scss';
-import NotFound from '@/app/not-found';
-import WorkDescription from '@/app/ui/WorkDescription/WorkDescription';
-import WorkImages from '@/app/ui/WorkImages/WorkImages';
+import { formatText } from "@/app/lib/HelperFunctions";
+import { WorkData, WorkDataType } from "@/app/lib/WorkData";
+import "@/app/my-work/[slug]/WorkDetails.scss";
+import NotFound from "@/app/not-found";
+import WorkDescription from "@/app/ui/WorkDescription/WorkDescription";
+import WorkImages from "@/app/ui/WorkImages/WorkImages";
 
 export async function generateStaticParams() {
-  return WorkData.map(item => ({slug: `${formatText(item.workLabel)}-${formatText(item.workTitle)}`}));
+  return WorkData.map((item) => ({
+    slug: `${formatText(item.workLabel)}-${formatText(item.workTitle)}`,
+  }));
 }
 
-export default function Page({params}: {params: {slug: string}}) {
+export default async function Page(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
+
   function findWorkItem(item: WorkDataType, matchItem: string) {
-    const formattedName = `${formatText(item.workLabel)}-${formatText(item.workTitle)}`;
+    const formattedName = `${formatText(item.workLabel)}-${formatText(
+      item.workTitle
+    )}`;
 
     return formattedName === matchItem;
   }
 
   function getIndexOfWorkItem() {
-    return WorkData.findIndex(item => {
+    return WorkData.findIndex((item) => {
       return findWorkItem(item, params.slug);
     });
   }
@@ -26,7 +34,7 @@ export default function Page({params}: {params: {slug: string}}) {
     const workItemObj = {
       prev: (getIndexOfWorkItem() + WorkData.length - 1) % WorkData.length,
       current: getIndexOfWorkItem(),
-      next: (getIndexOfWorkItem() + 1) % WorkData.length
+      next: (getIndexOfWorkItem() + 1) % WorkData.length,
     };
 
     return workItemObj;
@@ -34,19 +42,17 @@ export default function Page({params}: {params: {slug: string}}) {
 
   function showWork() {
     if (filteredWork().current === -1) {
-      return (
-        <NotFound />
-      );
+      return <NotFound />;
     } else {
       const workData = WorkData[filteredWork().current];
 
-      const prevFormatted = `${formatText(WorkData[filteredWork().prev].workLabel)}-${formatText(
-        WorkData[filteredWork().prev].workTitle
-      )}`;
+      const prevFormatted = `${formatText(
+        WorkData[filteredWork().prev].workLabel
+      )}-${formatText(WorkData[filteredWork().prev].workTitle)}`;
 
-      const nextFormatted = `${formatText(WorkData[filteredWork().next].workLabel)}-${formatText(
-        WorkData[filteredWork().next].workTitle
-      )}`;
+      const nextFormatted = `${formatText(
+        WorkData[filteredWork().next].workLabel
+      )}-${formatText(WorkData[filteredWork().next].workTitle)}`;
 
       return (
         <section className="workDetails">

@@ -42,7 +42,6 @@ export default [
         },
       ],
       "@stylistic/indent": ["error", 2],
-      "@stylistic/quotes": ["error", "single"],
     },
   },
 ];
