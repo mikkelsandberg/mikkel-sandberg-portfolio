@@ -1,6 +1,6 @@
 import { WorkDataType } from '@/app/lib/WorkData';
 
-const WorkDataLegacy: WorkDataType[] = [
+export const WorkDataLegacy: WorkDataType[] = [
   {
     id: 'tabletoptown',
     workLabel: 'TabletopTown',

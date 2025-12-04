@@ -11,19 +11,15 @@ export async function generateStaticParams() {
 
 export default function Page({params}: {params: {slug: string}}) {
   function findWorkItem(item: WorkDataType, matchItem: string) {
-    let formattedName = `${formatText(item.workLabel)}-${formatText(item.workTitle)}`;
+    const formattedName = `${formatText(item.workLabel)}-${formatText(item.workTitle)}`;
 
     return formattedName === matchItem;
   }
 
   function getIndexOfWorkItem() {
-    let index;
-
-    index = WorkData.findIndex(item => {
+    return WorkData.findIndex(item => {
       return findWorkItem(item, params.slug);
     });
-
-    return index;
   }
 
   function filteredWork() {

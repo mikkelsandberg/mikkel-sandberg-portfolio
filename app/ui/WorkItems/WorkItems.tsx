@@ -35,7 +35,7 @@ export default function WorkItems({ activeFilter, numItems }: WorkItemsProps) {
     const outputArray = [];
 
     for (let i = 0; i < length; i++) {
-      let item = inputArray[i];
+      const item = inputArray[i];
       outputArray.push(<WorkItem key={item.id} item={item} />);
     }
 
